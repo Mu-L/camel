@@ -70,7 +70,7 @@
     <avro-version>1.10.2</avro-version>
     <awaitility-version>4.0.3</awaitility-version>
     <aws-java-sdk-swf-libs>1.11.22</aws-java-sdk-swf-libs>
-    <aws-java-sdk2-version>2.16.43</aws-java-sdk2-version>
+    <aws-java-sdk2-version>2.16.44</aws-java-sdk2-version>
     <aws-xray-version>2.6.1</aws-xray-version>
     <axiom-version>1.2.14</axiom-version>
     <azure-jackson2-version>2.11.3</azure-jackson2-version>
@@ -79,7 +79,7 @@
     <beanstalkd-client-version>1.4.6</beanstalkd-client-version>
     <bouncycastle-version>1.68</bouncycastle-version>
     <box-java-sdk-version>2.54.0</box-java-sdk-version>
-    <braintree-gateway-version>3.7.0</braintree-gateway-version>
+    <braintree-gateway-version>3.8.0</braintree-gateway-version>
     <brave-zipkin-version>5.13.3</brave-zipkin-version>
     <build-helper-maven-plugin-version>3.2.0</build-helper-maven-plugin-version>
     <c3p0-version>0.9.5.5</c3p0-version>
@@ -120,6 +120,7 @@
     <cassandra-version>3.11.8</cassandra-version>
     <cdi-api-2.0-version>2.0</cdi-api-2.0-version>
     <cglib-version>3.2.12</cglib-version>
+    <checkstyle.failOnViolation>false</checkstyle.failOnViolation>
     <chunk-templates-version>3.6.1</chunk-templates-version>
     <citrus-version>2.8.0</citrus-version>
     <classgraph-version>4.8.52</classgraph-version>
@@ -164,8 +165,8 @@
     <cxf.codegenplugin.forkmode>once</cxf.codegenplugin.forkmode>
     <cxf.xjc.jvmArgs></cxf.xjc.jvmArgs>
     <datasonnet-mapper-version>2.1.1</datasonnet-mapper-version>
-    <debezium-mysql-connector-version>8.0.22</debezium-mysql-connector-version>
-    <debezium-version>1.5.0.Final</debezium-version>
+    <debezium-mysql-connector-version>8.0.25</debezium-mysql-connector-version>
+    <debezium-version>1.6.0.Final</debezium-version>
     <deltaspike-version>1.9.4</deltaspike-version>
     <depends-maven-plugin-version>1.4.0</depends-maven-plugin-version>
     <derby-version>10.14.2.0</derby-version>
@@ -404,7 +405,7 @@
     <maven-javadoc-plugin-version>3.2.0</maven-javadoc-plugin-version>
     <maven-jboss-as-maven-plugin-version>7.9.Final</maven-jboss-as-maven-plugin-version>
     <maven-model-version>3.2.5</maven-model-version>
-    <maven-owasp-plugin-version>6.1.3</maven-owasp-plugin-version>
+    <maven-owasp-plugin-version>6.1.5</maven-owasp-plugin-version>
     <maven-plugin-annotations-version>3.6.0</maven-plugin-annotations-version>
     <maven-plugin-plugin-version>3.6.0</maven-plugin-plugin-version>
     <maven-plugin-testing-harness-version>3.3.0</maven-plugin-testing-harness-version>
@@ -484,7 +485,7 @@
     <rdf4j-rio-version>2.4.4</rdf4j-rio-version>
     <reactive-streams-version>1.0.3</reactive-streams-version>
     <reactor-netty-version>1.0.2</reactor-netty-version>
-    <reactor-version>3.2.16.RELEASE</reactor-version>
+    <reactor-version>3.4.5</reactor-version>
     <redisson-version>3.15.3</redisson-version>
     <rescu-version>2.0.4</rescu-version>
     <resilience4j-version>1.7.0</resilience4j-version>
@@ -504,6 +505,7 @@
     <scribe-version>1.3.7</scribe-version>
     <servicemix-specs-version>2.9.0</servicemix-specs-version>
     <servlet-version-range>[3,4)</servlet-version-range>
+    <servo-version>0.10.1</servo-version>
     <shiro-version>1.7.1</shiro-version>
     <shrinkwrap-descriptors-version>2.0.0</shrinkwrap-descriptors-version>
     <shrinkwrap-resolver-version>3.1.3</shrinkwrap-resolver-version>
@@ -536,7 +538,7 @@
     <spring-version>${spring5-version}</spring-version>
     <spring-version-range>[5,6)</spring-version-range>
     <spring-ws-version>3.0.10.RELEASE</spring-ws-version>
-    <spring5-version>5.3.5</spring5-version>
+    <spring5-version>5.3.6</spring5-version>
     <sql-maven-plugin-version>1.5</sql-maven-plugin-version>
     <squareup-okhttp-version>3.14.7</squareup-okhttp-version>
     <squareup-okio-version>1.17.2</squareup-okio-version>
@@ -560,7 +562,7 @@
     <vavr-version>0.10.2</vavr-version>
     <velocity-tools-version>3.1</velocity-tools-version>
     <velocity-version>2.3</velocity-version>
-    <vertx-version>3.9.6</vertx-version>
+    <vertx-version>4.0.3</vertx-version>
     <vysper-version>0.7</vysper-version>
     <web3j-quorum-version>0.8.0</web3j-quorum-version>
     <web3j-version>3.6.0</web3j-version>

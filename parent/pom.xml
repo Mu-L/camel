@@ -44,6 +44,7 @@
         <camel.surefire.parallel.factor>1</camel.surefire.parallel.factor>
         <cxf.xjc.jvmArgs/>
         <trimStackTrace>false</trimStackTrace>
+        <checkstyle.failOnViolation>false</checkstyle.failOnViolation>
         <!-- dependency versions -->
         <abdera-version>1.1.3</abdera-version>
         <!-- Note that activemq dependency is only used for testing! -->
@@ -82,7 +83,7 @@
         <avro-ipc-jetty-version>1.10.2</avro-ipc-jetty-version>
         <avro-ipc-netty-version>1.10.2</avro-ipc-netty-version>
         <awaitility-version>4.0.3</awaitility-version>
-        <aws-java-sdk2-version>2.16.43</aws-java-sdk2-version>
+        <aws-java-sdk2-version>2.16.44</aws-java-sdk2-version>
         <aws-java-sdk-swf-libs>1.11.22</aws-java-sdk-swf-libs>
         <aws-xray-version>2.6.1</aws-xray-version>
         <axiom-version>1.2.14</axiom-version>
@@ -92,7 +93,7 @@
         <beanstalkd-client-version>1.4.6</beanstalkd-client-version>
         <bouncycastle-version>1.68</bouncycastle-version>
         <box-java-sdk-version>2.54.0</box-java-sdk-version>
-        <braintree-gateway-version>3.7.0</braintree-gateway-version>
+        <braintree-gateway-version>3.8.0</braintree-gateway-version>
         <brave-zipkin-version>5.13.3</brave-zipkin-version>
         <build-helper-maven-plugin-version>3.2.0</build-helper-maven-plugin-version>
         <c3p0-version>0.9.5.5</c3p0-version>
@@ -159,8 +160,8 @@
         <docker-java-version>3.2.7</docker-java-version>
         <dozer-version>6.5.2</dozer-version>
         <dropbox-version>3.2.0</dropbox-version>
-        <debezium-version>1.5.0.Final</debezium-version>
-        <debezium-mysql-connector-version>8.0.22</debezium-mysql-connector-version>
+        <debezium-version>1.6.0.Final</debezium-version>
+        <debezium-mysql-connector-version>8.0.25</debezium-mysql-connector-version>
         <eddsa-version>0.3.0</eddsa-version>
         <egit-github-core-version>2.1.5</egit-github-core-version>
         <ehcache3-version>3.9.0</ehcache3-version>
@@ -385,7 +386,7 @@
         <maven-assembly-plugin-version>3.0.0</maven-assembly-plugin-version>
         <maven-checkstyle-plugin-version>3.1.2</maven-checkstyle-plugin-version>
         <maven-checkstyle-version>8.40</maven-checkstyle-version>
-        <maven-owasp-plugin-version>6.1.3</maven-owasp-plugin-version>
+        <maven-owasp-plugin-version>6.1.5</maven-owasp-plugin-version>
         <maven-jar-plugin-version>3.2.0</maven-jar-plugin-version>
         <maven-javadoc-plugin-version>3.2.0</maven-javadoc-plugin-version>
         <maven-jboss-as-maven-plugin-version>7.9.Final</maven-jboss-as-maven-plugin-version>
@@ -470,7 +471,7 @@
         <rdf4j-rio-version>2.4.4</rdf4j-rio-version>
         <rdf4j-model-version>2.4.4</rdf4j-model-version>
         <reactive-streams-version>1.0.3</reactive-streams-version>
-        <reactor-version>3.2.16.RELEASE</reactor-version>
+        <reactor-version>3.4.5</reactor-version>
         <reactor-netty-version>1.0.2</reactor-netty-version>
         <redisson-version>3.15.3</redisson-version>
         <rescu-version>2.0.4</rescu-version>
@@ -480,6 +481,7 @@
         <rhino-version>1.7.7.1</rhino-version>
         <rhino-js-version>1.7R2</rhino-js-version>
         <ribbon-version>2.3.0</ribbon-version>
+        <servo-version>0.10.1</servo-version>
         <roaster-version>2.22.0.Final</roaster-version>
         <robotframework-version>3.2.2</robotframework-version>
         <rome-version>1.15.0</rome-version>
@@ -519,7 +521,7 @@
         <spring-ldap-version>2.3.3.RELEASE</spring-ldap-version>
         <spring-version-range>[5,6)</spring-version-range>
         <spring-version>${spring5-version}</spring-version>
-        <spring5-version>5.3.5</spring5-version>
+        <spring5-version>5.3.6</spring5-version>
         <spring-rabbitmq-version>2.3.6</spring-rabbitmq-version>
         <spring-security-version>5.4.5</spring-security-version>
         <spring-ws-version>3.0.10.RELEASE</spring-ws-version>
@@ -547,7 +549,7 @@
         <vavr-version>0.10.2</vavr-version>
         <velocity-tools-version>3.1</velocity-tools-version>
         <velocity-version>2.3</velocity-version>
-        <vertx-version>3.9.6</vertx-version>
+        <vertx-version>4.0.3</vertx-version>
         <vysper-version>0.7</vysper-version>
         <web3j-version>3.6.0</web3j-version>
         <web3j-quorum-version>0.8.0</web3j-quorum-version>
@@ -2550,6 +2552,11 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-vertx-parent</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-vertx-websocket</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -4134,7 +4141,7 @@
                                 <excludes>${sourcecheckExcludesComma}**/archetype-resources/**/*.java,**/archetype-resources/**/*.groovy,**/archetype-resources/**/*.scala,**/archetype-resources/**/*.xml,**/org/json/simple/**/*.java</excludes>
                             </configuration>
                             <goals>
-                                <goal>checkstyle</goal>
+                                <goal>check</goal>
                             </goals>
                         </execution>
                     </executions>
@@ -4666,6 +4673,9 @@
                     </plugin>
                 </plugins>
             </build>
+            <properties>
+                <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
+            </properties>
         </profile>
 
         <profile>

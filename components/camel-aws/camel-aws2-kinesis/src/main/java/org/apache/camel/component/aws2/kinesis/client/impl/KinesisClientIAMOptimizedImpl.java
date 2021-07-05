@@ -23,7 +23,6 @@ import org.apache.camel.component.aws2.kinesis.client.KinesisInternalClient;
 import org.apache.camel.util.ObjectHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
 import software.amazon.awssdk.http.SdkHttpClient;
 import software.amazon.awssdk.http.SdkHttpConfigurationOption;
 import software.amazon.awssdk.http.apache.ApacheHttpClient;
@@ -67,20 +66,7 @@ public class KinesisClientIAMOptimizedImpl implements KinesisInternalClient {
                                            + configuration.getProxyPort());
             proxyConfig.endpoint(proxyEndpoint);
             httpClientBuilder = ApacheHttpClient.builder().proxyConfiguration(proxyConfig.build());
-            isClientConfigFound = true;
-        }
-        if (configuration.getAccessKey() != null && configuration.getSecretKey() != null) {
-            DefaultCredentialsProvider cred = DefaultCredentialsProvider.create();
-            if (isClientConfigFound) {
-                clientBuilder = clientBuilder.httpClientBuilder(httpClientBuilder)
-                        .credentialsProvider(cred);
-            } else {
-                clientBuilder = clientBuilder.credentialsProvider(cred);
-            }
-        } else {
-            if (!isClientConfigFound) {
-                clientBuilder = clientBuilder.httpClientBuilder(httpClientBuilder);
-            }
+            clientBuilder = clientBuilder.httpClientBuilder(httpClientBuilder);
         }
         if (ObjectHelper.isNotEmpty(configuration.getRegion())) {
             clientBuilder = clientBuilder.region(Region.of(configuration.getRegion()));
